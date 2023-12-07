@@ -18,14 +18,19 @@ export default function App() {
         <StatusBar hidden />
 
         <Image style={styles.Logo} source={require('./assets/DoorSenseLogo.png')}/>
+        
+        <Text style={styles.title}>Bem-Vindo</Text>
+        <Text style={styles.Mensagem}>Primeiro acesso? Crie seu login e senha!</Text>
 
-        <TextInput placeholder='Crie um Usuario' style={styles.TextInput}onChangeText={Text=>setUsuario} />
+        <TextInput placeholder='Crie seu Usuario' style={styles.TextInput}onChangeText={Text=>setUsuario} />
         <TextInput secureTextEntry = {true} placeholder='Crie uma senha' style={styles.TextInput}onChangeText={Text=>setSenha} />
         <TextInput secureTextEntry = {true} placeholder='Confirme a senha' style={styles.TextInput}onChangeText={Text=>setConfirmar} />
 
         <TouchableOpacity style={styles.btnCriar} onPress={()=>Criar}>
           <Text style={{color:'white', textAlign:'center'}}Criar>Criar</Text>
         </TouchableOpacity>
+
+        
 
     </View>
   );
@@ -39,14 +44,33 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20
   },
-  TextInput:{
+  Logo:{
+      width: '45%',
+      height: '20%',
+      marginTop: '-100%',
+      
+    },
+    title:{
+      fontWeight: 'bold',
+      color: '#05AFF2',
+      fontSize: 52,
+    },
+
+    Mensagem:{
+      fontSize: 20,
+      fontWeight: 'light'
+    },
+      
+    TextInput:{
     width:'100%',
-    heigh:40,
+    heigh: '40%',
     backgroundColor: 'white',
     borderRadius: 20,
     paddingLeft:10,
-    marginBottom:10
+    marginBottom:10,
+    textAlign: 'center'
   },
+  
   btnCriar:{
     width: '30%',
     height: 40,
@@ -54,14 +78,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     justifyContent:'center',
     
-
   },
-  Logo:{
-      width: '45%',
-      height: '20%',
-      marginTop: '-100%'
-
-  }
+  
 
 
 });
